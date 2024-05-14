@@ -1,24 +1,43 @@
 @font-face {
-    font-family: "Rubik";
-    src: url('./assets/fonts/Rubik-VariableFont_wght.ttf') format('truetype')
+    font-family: "Rubik Regular";
+    src: url('./assets/fonts/Rubik-Regular.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: "Rubik Medium";
+    src: url('./assets/fonts/Rubik-Medium.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: "Rubik Heavy";
+    src: url('./assets/fonts/Rubik-Bold.ttf') format('truetype')
 }
 
 :root {
-    ---system-font: 'Rubik'
-    ---system-font-size: 18px;
-    ---system-mobile-breakpoint: 375px;
-    ---system-desktop-breakpoint: 1440px;
-    ---system-font-light-weight: 400;
-    ---system-font-medium-weight: 500;
-    ---system-font-heavy-weight: 700;
-    ---system-color-very-dark-gray: hsl(0, 0%, 17%);
-    ---system-color-dark-gray: hsl(0, 0%, 59%);
+    --system-font-regular: 'Rubik Regular';
+    --system-font-medium: 'Rubik Medium';
+    --system-font-heavy: 'Rubik Heavy';
+    --system-font-size: 18px;
+    --system-mobile-breakpoint: 375px;
+    --system-desktop-breakpoint: 1440px;   
+    --system-color-very-dark-gray: hsl(0, 0%, 17%);
+    --system-color-dark-gray: hsl(0, 0%, 59%);
 }
 
 
 
 
 body {
-    font-family: var(---system-font);
-    font-size: var(---system-font-size);
+    /* font-family: var(--system-font); */
+    font-size: var(--system-font-size);
+}
+
+.one {
+    font-family: var(--system-font-regular);
+}
+.two {
+    font-family: var( --system-font-medium);
+}
+.three {
+    font-family: var(--system-font-heavy);
 }
