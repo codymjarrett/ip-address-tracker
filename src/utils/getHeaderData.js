@@ -3,6 +3,7 @@ import formatLocation from './formatLocation.js'
 
 const getHeaderData = (header, data) => {
     const {timezone, zip, region, city, isp, query} = data;
+    console.log({data})
 
     switch(header){
         case HEADERS.IP_ADDRESS: {

@@ -89,22 +89,32 @@ body {
     border-bottom-right-radius: 5px;
 }
 
-#results-container {
-    display: none;
+#search-component button:hover {
+    background-color: var(--system-color-very-dark-gray);
 }
 
-#results-container.show {
+#search-component button.disabled {
+    background-color: var(--system-color-dark-gray);
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+#results-container {
+    display: none;
     background-color: #fff;
     border-radius: 5px;
     width: 87%;
-    height: 400px;
-    display: flex;
     justify-content: center;
     margin: 0 auto;
     position: absolute;
     top: 22%;
     left: 50%;
     transform: translateX(-50%);
+    height: 400px;
+}
+
+#results-container.show {
+    display: flex;
 }
 
 .results {
@@ -116,9 +126,6 @@ body {
     padding: 30px 0;
 }
 
-.results section {
-
-}
 
 .results section .label {
     color: var(--system-color-dark-gray);
@@ -134,6 +141,10 @@ body {
     font-size: 24px;
 }
 
+
+.empty-state-message {
+    font-size: 22px;
+}
 
 
 

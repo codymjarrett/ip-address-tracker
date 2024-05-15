@@ -18,8 +18,8 @@
             <h1 id="title">IP Address Tracker</h1>
             <div id="search">
                 <div id="search-component">
-                    <input type="search" name="" id="" placeholder="Search for any IP address or domain">
-                    <button type="button">
+                    <input class="search-input" type="search" name="" id="" placeholder="Search for any IP address or domain" disabled>
+                    <button class="disabled" type="button" disabled>
                         <img src="./assets/images/icon-arrow.svg" alt="">
                     </button>
                 </div>
@@ -29,8 +29,13 @@
         <div id="map"></div>
         <div id="results-container"></div>
     </div>
+    
     <template id="results-template">
         <div class="results"></div>
+    </template>
+
+    <template id="empty-state-template">
+        <div class="empty-state"></div>
     </template>
 
 </body>

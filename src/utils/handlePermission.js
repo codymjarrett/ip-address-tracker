@@ -1,23 +1,23 @@
-import { hasGeolocation,successCallback, errorCallback, options } from "./geolocation.js";
+import { hasGeolocation, successCallback, errorCallback, options } from "./geolocation.js";
 
 const handlePermissions = () => {
-    if(!hasGeolocation) {
+    if (!hasGeolocation) {
         alert("No geolocation available!");
     }
-// break out callback
-    navigator.permissions.query({name: 'geolocation'}).then( function (result) {
+    // break out callback
+    navigator.permissions.query({ name: 'geolocation' }).then(function (result) {
 
-        if(result.state === 'granted'){
+        if (result.state === 'granted') {
             // navigator.geolocation.getCurrentPosition(successCallback, errorCallback, options)
 
             // show map unblurred with data
         }
 
-        if(result.state === 'prompt') {
+        if (result.state === 'prompt') {
             navigator.geolocation.getCurrentPosition(successCallback, errorCallback, options)
         }
 
-        if(result.state === 'denied') {
+        if (result.state === 'denied') {
             // empty state or something 
         }
 
@@ -34,7 +34,7 @@ const handlePermissions = () => {
 
     })
 
-} 
+}
 
 
 export default handlePermissions;

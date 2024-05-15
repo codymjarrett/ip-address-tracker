@@ -1,6 +1,6 @@
 const appendResults = (element) => {
     const parent = document.querySelector('#results-container');
-    parent.appendChild(element);
+    parent.replaceChildren(element);
 }
 
 export default appendResults;
