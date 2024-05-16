@@ -5,7 +5,7 @@ const buildUrl = (query = "") => {
     const fields = ['query', 'status', 'region', 'city', 'zip', 'lat', 'lon','timezone', 'isp'];
 
 
-    const url = query ? IP_API_BASE_URL.concat(`/${query}`) : IP_API_BASE_URL;
+    const url = query ? `${IP_API_BASE_URL}/${query}` : IP_API_BASE_URL;
 
     return `${url}?fields=${fields.join(',')}`
 

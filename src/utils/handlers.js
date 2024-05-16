@@ -6,8 +6,9 @@ import {
 
 import {
     renderResults,
-    appendResults, 
-    renderEmptyState
+    appendResults,
+    renderEmptyState,
+    renderValidationError
 } from '../render-functions/index.js'
 
 import { VALIDATION_CONSTANTS } from '../constants.js'
@@ -19,9 +20,14 @@ let value = "";
 
 export const onSearchClick = (event) => {
     const inputValidation = validateUserInput(value);
-    debugger;
+
+    const searchInput = document.querySelector('#search-component .search-input');
 
     if (value && inputValidation !== VALIDATION_CONSTANTS.INVALID) {
+        if (searchInput.classList.contains('error-state')) {
+            searchInput.classList.remove('error-state');
+        }
+
         fetchAPI(value).then((data) => {
             document.querySelector('#search #search-component .search-input').value = "";
             if (data?.status === "success") {
@@ -31,10 +37,9 @@ export const onSearchClick = (event) => {
             } else {
                 renderEmptyState();
             }
-
         })
     } else {
-        // triggerValidation(inputValidation);
+        renderValidationError();
     }
 }
 
