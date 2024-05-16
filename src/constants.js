@@ -16,5 +16,4 @@ export const VALIDATION_CONSTANTS = {
     IPV6: "IPv6 address",
     DOMAIN_NAME: "Domain name",
     INVALID: "Invalid input",
-
 }

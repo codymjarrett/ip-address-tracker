@@ -10,17 +10,17 @@ export const createMapWithCoordinates = (coordinates) => {
         container: 'map', // container ID
         center: coordinates, // starting position [lng, lat]
         zoom: 12 // starting zoom
-    })
-}
+    });
+};
 
 export const createMapWithMarker = (map, coordinates) => {
     const marker = new mapboxgl.Marker({
         color: '#FFFFF',
         draggable: true,
-    }).setLngLat(coordinates).addTo(map)
+    }).setLngLat(coordinates).addTo(map);
 
     return marker;
-}
+};
 
 
 /**

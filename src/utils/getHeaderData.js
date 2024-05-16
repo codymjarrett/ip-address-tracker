@@ -1,5 +1,5 @@
 import { HEADERS } from '../constants.js';
-import formatLocation from './formatLocation.js'
+import formatLocation from './formatLocation.js';
 
 const getHeaderData = (header, data) => {
     const { timezone, zip, region, city, isp, query } = data;
@@ -21,7 +21,6 @@ const getHeaderData = (header, data) => {
             return ''
         }
     }
-
-}
+};
 
 export default getHeaderData;

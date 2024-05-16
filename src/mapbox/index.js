@@ -1,1 +1,1 @@
-export {default} from './mapbox.js'
+export {default} from './mapbox.js';

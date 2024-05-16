@@ -15,6 +15,6 @@ const validateUserInput = (input) => {
     } else {
         return VALIDATION_CONSTANTS.INVALID;
     }
-}
+};
 
 export default validateUserInput;

@@ -26,14 +26,14 @@ export const onSearchClick = (event) => {
     if (value && inputValidation !== VALIDATION_CONSTANTS.INVALID) {
         if (searchInputElement.classList.contains('error-state')) {
             searchInputElement.classList.remove('error-state');
-        }
+        };
 
         fetchAPI(value).then((data) => {
             searchInputElement.value = "";
             if (data?.status === "success") {
                 createMap([data.lon, data.lat]);
                 const elements = renderResults(data);
-                appendResults(elements)
+                appendResults(elements);
             } else {
                 renderEmptyState();
             }

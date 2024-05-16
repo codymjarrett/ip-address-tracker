@@ -3,7 +3,7 @@ import { fetchAPI, addElementListeners } from './index.js';
 import { renderResults, appendResults } from '../render-functions/index.js';
 import { searchButtonElement, searchInputElement, mapElement, resultsContainerElement } from '../dom-references.js';
 
-export const hasGeolocation = "geolocation" in navigator
+export const hasGeolocation = "geolocation" in navigator;
 
 export const options = {
   enableHighAccuracy: false,
@@ -28,7 +28,7 @@ export const successCallback = (position) => {
     //remove blur from map
     mapElement.classList.remove('blur');
     const elements = renderResults(data);
-    appendResults(elements)
+    appendResults(elements);
     resultsContainerElement.classList.add('show');
 
   });

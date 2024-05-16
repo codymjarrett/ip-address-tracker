@@ -7,7 +7,7 @@ const renderEmptyState = () => {
     div.innerHTML = `
     <div class="empty-state-message">No results were found 😢 </div>
     <div class="empty-state-message">Try a different search</div>
-    `
+    `;
     emptyStateEl.append(div);
 
     resultsContainerElement.replaceChildren(emptyStateEl);
