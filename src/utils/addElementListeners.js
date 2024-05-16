@@ -1,11 +1,13 @@
 import {
     onSearchClick, 
     onSearchChange
-} from './index.js'
+} from './index.js';
+
+import {searchInputElement, searchButtonElement} from '../dom-references.js';
 
 const addElementListeners = () => {
-    document.querySelector('#search #search-component button').addEventListener('click', onSearchClick)
-    document.querySelector('#search #search-component .search-input').addEventListener('input', onSearchChange)
+    searchButtonElement.addEventListener('click', onSearchClick)
+    searchInputElement.addEventListener('input', onSearchChange)
 
 }
 

@@ -1,9 +1,8 @@
 import { headers } from '../constants.js';
 import { getHeaderData } from '../utils/index.js';
+import { resultsTemplate } from '../dom-references.js';
 
 const renderResults = (data) => {
-
-    const resultsTemplate = document.getElementById('results-template');
     const tmpl = resultsTemplate.content.cloneNode(true);
     const resultsEl = tmpl.querySelector('.results')
     const elements = headers.map((header, index) => {

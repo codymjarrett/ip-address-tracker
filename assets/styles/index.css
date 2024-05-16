@@ -4,17 +4,17 @@
 
 @font-face {
     font-family: "Rubik Regular";
-    src: url('../assets/fonts/Rubik-Regular.ttf') format('truetype')
+    src: url('../fonts/Rubik-Regular.ttf') format('truetype')
 }
 
 @font-face {
     font-family: "Rubik Medium";
-    src: url('../assets/fonts/Rubik-Medium.ttf') format('truetype')
+    src: url('../fonts/Rubik-Medium.ttf') format('truetype')
 }
 
 @font-face {
     font-family: "Rubik Heavy";
-    src: url('../assets/fonts/Rubik-Bold.ttf') format('truetype')
+    src: url('../fonts/Rubik-Bold.ttf') format('truetype')
 }
 
 :root {
@@ -46,7 +46,7 @@ body {
 
 
 #hero {
-    background-image: url('../assets/images/pattern-bg.png');
+    background-image: url('../images/pattern-bg.png');
     background-size: cover;
     width: 100%;
     height: 30vh;
@@ -78,6 +78,7 @@ body {
     border-bottom-left-radius: 1cap;
     border: none;
     padding: 0 0 0 20px;
+    font-size: 14px;
 }
 
 #search-component .search-input.error-state {
@@ -141,14 +142,13 @@ body {
     margin-top: 12px;
     font-family: var(--system-font-medium);
     font-size: 24px;
+    text-align: center;
 }
 
 .empty-state-message {
     font-size: 22px;
     padding: 20px 0;
 }
-
-
 
 
 @media (min-width: 768px) {
@@ -163,8 +163,8 @@ body {
 
     #results-container {
         width: inherit;
-        height: 142px;
-        top: 25%;
+        height: 175px;
+        top: 22%;
     }
 
     .results {
@@ -172,16 +172,32 @@ body {
         justify-content: space-around;
         flex-direction: row;
     }
+
     .results section {
         padding: 0 25px;
     }
 
-    .results section .label {
-       text-align: left;
+    .results section .label,
+    .results section .data {
+        text-align: left;
     }
 
     .results section.divider {
         height: 100%;
         border-right: solid lightgrey 1px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #search-component .search-input {
+        font-size: 18px;
+    }
+}
+
+
+
+@media (min-width: 1550px) {
+    #results-container {
+        height: 142px;
     }
 }

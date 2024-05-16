@@ -9,7 +9,9 @@ import {
     appendResults,
     renderEmptyState,
     renderValidationError
-} from '../render-functions/index.js'
+} from '../render-functions/index.js';
+
+import {searchInputElement} from '../dom-references.js';
 
 import { VALIDATION_CONSTANTS } from '../constants.js'
 
@@ -21,15 +23,13 @@ let value = "";
 export const onSearchClick = (event) => {
     const inputValidation = validateUserInput(value);
 
-    const searchInput = document.querySelector('#search-component .search-input');
-
     if (value && inputValidation !== VALIDATION_CONSTANTS.INVALID) {
-        if (searchInput.classList.contains('error-state')) {
-            searchInput.classList.remove('error-state');
+        if (searchInputElement.classList.contains('error-state')) {
+            searchInputElement.classList.remove('error-state');
         }
 
         fetchAPI(value).then((data) => {
-            document.querySelector('#search #search-component .search-input').value = "";
+            searchInputElement.value = "";
             if (data?.status === "success") {
                 createMap([data.lon, data.lat]);
                 const elements = renderResults(data);

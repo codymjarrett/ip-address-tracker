@@ -1,6 +1,7 @@
+import { resultsContainerElement } from '../dom-references.js';
+
 const appendResults = (element) => {
-    const parent = document.querySelector('#results-container');
-    parent.replaceChildren(element);
+    resultsContainerElement.replaceChildren(element);
 }
 
 export default appendResults;

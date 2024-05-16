@@ -1,11 +1,12 @@
-import createMap from '../mapbox/mapbox.js'
+import createMap from '../mapbox/mapbox.js';
+import { mapElement } from '../dom-references.js';
 
 import { DEFAULT_COORDINATES } from '../constants.js'
 
-const createInitialMapState  = () => {
+const createInitialMapState = () => {
   return new Promise((resolve) => {
     createMap(DEFAULT_COORDINATES);
-    document.getElementById('map').classList.add('blur');
+    mapElement.classList.add('blur');
     resolve();
   });
 };

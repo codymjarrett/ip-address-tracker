@@ -1,5 +1,7 @@
+import { searchInputElement } from '../dom-references.js';
+
 const renderValidationError = () => {
-document.querySelector('.search-input').classList.add('error-state');
+    searchInputElement.classList.add('error-state');
 }
 
 export default renderValidationError;

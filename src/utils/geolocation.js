@@ -1,6 +1,7 @@
 import createMap from '../mapbox/index.js';
 import { fetchAPI, addElementListeners } from './index.js';
 import { renderResults, appendResults } from '../render-functions/index.js';
+import { searchButtonElement, searchInputElement, mapElement, resultsContainerElement } from '../dom-references.js';
 
 export const hasGeolocation = "geolocation" in navigator
 
@@ -18,19 +19,17 @@ export const successCallback = (position) => {
   fetchAPI().then((data) => {
     createMap([longitude, latitude]);
     // enable button
-    const button = document.querySelector('#search #search-component button');
-    button.disabled = false;
-    button.classList.remove('disabled');
+    searchButtonElement.disabled = false;
+    searchButtonElement.classList.remove('disabled');
     //enable search input
-    const searchInput = document.querySelector('#search #search-component .search-input');
-    searchInput.value = "";
-    searchInput.disabled = false;
+    searchInputElement.value = "";
+    searchInputElement.disabled = false;
     addElementListeners();
     //remove blur from map
-    document.getElementById('map').classList.remove('blur');
+    mapElement.classList.remove('blur');
     const elements = renderResults(data);
     appendResults(elements)
-    document.getElementById('results-container').classList.add('show');
+    resultsContainerElement.classList.add('show');
 
   });
 

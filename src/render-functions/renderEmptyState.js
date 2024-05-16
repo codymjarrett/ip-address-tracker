@@ -1,5 +1,6 @@
+import {emptyStateTemplate, resultsContainerElement, mapElement} from '../dom-references.js';
+
 const renderEmptyState = () => {
-    const emptyStateTemplate = document.getElementById('empty-state-template');
     const tmpl = emptyStateTemplate.content.cloneNode(true);
     const emptyStateEl = tmpl.querySelector('.empty-state');
     const div = document.createElement('div');
@@ -9,8 +10,8 @@ const renderEmptyState = () => {
     `
     emptyStateEl.append(div);
 
-    document.getElementById('results-container').replaceChildren(emptyStateEl);
-    document.getElementById('map').classList.add('blur');
+    resultsContainerElement.replaceChildren(emptyStateEl);
+    mapElement.classList.add('blur');
 
     return emptyStateEl;
 
