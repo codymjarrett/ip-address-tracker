@@ -4,6 +4,7 @@ const renderEmptyState = () => {
     const tmpl = emptyStateTemplate.content.cloneNode(true);
     const emptyStateEl = tmpl.querySelector('.empty-state');
     const div = document.createElement('div');
+    div.classList.add('empty-state-message-container');
     div.innerHTML = `
     <div class="empty-state-message">No results were found 😢 </div>
     <div class="empty-state-message">Try a different search</div>

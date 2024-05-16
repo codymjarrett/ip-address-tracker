@@ -6,7 +6,7 @@ import handlePermissions from './handlePermission.js';
 import createInitialMapState from './createInitialMapState.js';
 import addElementListeners from './addElementListeners.js';
 import validateUserInput from './validateUserInput.js';
-import { onSearchClick, onSearchChange } from './handlers.js';
+import { onSearchChange, onSearch } from './handlers.js';
 
 
 export {
@@ -19,6 +19,6 @@ export {
     createInitialMapState,
     addElementListeners,
     validateUserInput,
-    onSearchClick, 
-    onSearchChange,
+    onSearchChange, 
+    onSearch,
 };

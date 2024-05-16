@@ -20,7 +20,8 @@ import createMap from '../mapbox/index.js';
 
 let value = "";
 
-export const onSearchClick = (event) => {
+
+export const onSearch = (event) => {
     const inputValidation = validateUserInput(value);
 
     if (value && inputValidation !== VALIDATION_CONSTANTS.INVALID) {
@@ -46,4 +47,9 @@ export const onSearchClick = (event) => {
 
 export const onSearchChange = (event) => {
     value = event.target.value;
+
+    if(event.key === 'Enter') {
+        onSearch(value)
+    }
+
 }

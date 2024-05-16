@@ -186,6 +186,16 @@ body {
         height: 100%;
         border-right: solid lightgrey 1px;
     }
+
+    .empty-state-message-container {
+        width: 500px;
+        height: 100%;
+        text-align: center;
+    }
+
+    .empty-state-message {
+        padding: 0;
+    }
 }
 
 @media (min-width: 1200px) {
