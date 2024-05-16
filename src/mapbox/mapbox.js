@@ -1,3 +1,4 @@
+// please don't go crazy with my api key 
 mapboxgl.accessToken = 'pk.eyJ1IjoiY29keW1qYXJyZXR0IiwiYSI6ImNsdzczNHNqNDBndWoya280c2Q3Nnlra2kifQ.uNDJqVBLFPHxRwK8zt519w';
 
 /**

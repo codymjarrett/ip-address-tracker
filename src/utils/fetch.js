@@ -3,27 +3,23 @@ import { IP_API_BASE_URL } from '../constants.js';
 
 const buildUrl = (query = "") => {
     const fields = ['query', 'status', 'region', 'city', 'zip', 'lat', 'lon','timezone', 'isp'];
-    let url = `${IP_API_BASE_URL}`;
 
-    if (query) {
-        url = `${url}/${query}/`
-    }
 
-    return `${url}/?fields=${fields.join(',')}`
+    const url = query ? IP_API_BASE_URL.concat(`/${query}`) : IP_API_BASE_URL;
+
+    return `${url}?fields=${fields.join(',')}`
 
 }
 
-const fetchIPApi = async (query = '') => {
+const fetchAPI = async (query = '') => {
     try {
         const url = buildUrl(query);
         const result = await fetch(url);
-        const json = await result.json()
-        return json;
-
+        return await result.json()
     } catch (error) {
         console.error(error)
 
     }
 }
 
-export default fetchIPApi;
+export default fetchAPI;

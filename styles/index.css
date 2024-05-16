@@ -33,8 +33,6 @@ body {
 
 }
 
-
-
 #map {
     position: absolute;
     top: 30%;
@@ -76,8 +74,8 @@ body {
 
 #search-component input {
     width: 70%;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 1cap;
     border: none;
     padding: 0 0 0 20px;
 }
@@ -102,12 +100,12 @@ body {
 #results-container {
     display: none;
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 15px;
     width: 87%;
     justify-content: center;
     margin: 0 auto;
     position: absolute;
-    top: 22%;
+    top: 14%;
     left: 50%;
     transform: translateX(-50%);
     height: 400px;
@@ -142,11 +140,12 @@ body {
 }
 
 
+
+
 .empty-state-message {
     font-size: 22px;
+    padding: 20px 0;
 }
-
-
 
 
 @media (min-width: 768px) {
@@ -160,13 +159,27 @@ body {
     }
 
     #results-container {
-        width: 75%;
+        width: inherit;
         height: 130px;
-       
+        top: 25%;
     }
 
     .results {
+        width: inherit;
+        justify-content: initial;
+        align-items: center;
         flex-direction: row;
-        padding: 30px; 
+        padding: 20px;
+    }
+    .results section {
+        padding: 0 25px;
+    }
+
+    .results section .label {
+       text-align: left;
+    }
+
+    .results section.divider {
+        border-right: solid lightgrey 1px;
     }
 }

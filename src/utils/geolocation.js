@@ -1,5 +1,6 @@
 import createMap from '../mapbox/index.js';
-import { fetchIPApi, renderResults, appendResults, addElementListeners } from './index.js'
+import { fetchAPI, addElementListeners } from './index.js';
+import { renderResults, appendResults } from '../render-functions/index.js';
 
 export const hasGeolocation = "geolocation" in navigator
 
@@ -14,7 +15,7 @@ export const successCallback = (position) => {
   const latitude = position.coords.latitude;
   const longitude = position.coords.longitude;
 
-  fetchIPApi().then((data) => {
+  fetchAPI().then((data) => {
     createMap([longitude, latitude]);
     // enable button
     const button = document.querySelector('#search #search-component button');
@@ -22,21 +23,19 @@ export const successCallback = (position) => {
     button.classList.remove('disabled');
     //enable search input
     const searchInput = document.querySelector('#search #search-component .search-input');
-    searchInput.value = ""; 
+    searchInput.value = "";
     searchInput.disabled = false;
     addElementListeners();
     //remove blur from map
-    const map = document.getElementById('map');
-    map.classList.remove('blur');
-    const resultsContainer = document.getElementById('results-container');
+    document.getElementById('map').classList.remove('blur');
     const elements = renderResults(data);
     appendResults(elements)
-    resultsContainer.classList.add('show');
+    document.getElementById('results-container').classList.add('show');
 
   });
 
 }
 
 export const errorCallback = (error) => {
-  console.error("Error getting geolocation:", error); // need to do something here
+  console.error("Error getting geolocation:", error);
 }

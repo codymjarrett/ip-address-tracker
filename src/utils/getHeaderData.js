@@ -1,22 +1,21 @@
-import {HEADERS} from '../constants.js';
+import { HEADERS } from '../constants.js';
 import formatLocation from './formatLocation.js'
 
 const getHeaderData = (header, data) => {
-    const {timezone, zip, region, city, isp, query} = data;
-    console.log({data})
+    const { timezone, zip, region, city, isp, query } = data;
 
-    switch(header){
+    switch (header) {
         case HEADERS.IP_ADDRESS: {
-            return data['query']
+            return query;
         }
         case HEADERS.LOCATION: {
             return formatLocation(region, city, zip)
         }
         case HEADERS.TIMEZONE: {
-            return data['timezone']
+            return timezone;
         }
         case HEADERS.ISP: {
-            return data['isp']
+            return isp;
         }
         default: {
             return ''

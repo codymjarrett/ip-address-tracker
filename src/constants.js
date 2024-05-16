@@ -10,3 +10,11 @@ export const HEADERS = {
 };
 
 export const headers = Object.values(HEADERS);
+
+export const VALIDATION_CONSTANTS = {
+    IPV4: "IPv4 address",
+    IPV6: "IPv6 address",
+    DOMAIN_NAME: "Domain name",
+    INVALID: "Invalid input",
+
+}
