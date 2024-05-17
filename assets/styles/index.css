@@ -164,6 +164,7 @@ body {
     #results-container {
         width: inherit;
         height: 175px;
+        max-height: 200px;
         top: 22%;
     }
 
@@ -209,5 +210,6 @@ body {
 @media (min-width: 1550px) {
     #results-container {
         height: 142px;
+        max-height: 200px;
     }
 }
