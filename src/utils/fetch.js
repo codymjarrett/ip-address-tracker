@@ -1,6 +1,9 @@
 import { IP_API_BASE_URL } from '../constants.js';
 
-
+/**
+ * buildUrl - function that accepts a query (string) and builds the url to fetch
+ * @param {string} query
+ */
 const buildUrl = (query = "") => {
     const fields = ['query', 'status', 'region', 'city', 'zip', 'lat', 'lon','timezone', 'isp'];
     const url = query ? `${IP_API_BASE_URL}/${query}` : IP_API_BASE_URL;

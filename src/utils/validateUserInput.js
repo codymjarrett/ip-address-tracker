@@ -1,5 +1,10 @@
 import {VALIDATION_CONSTANTS} from "../constants.js"
 
+/**
+ * validateUserInput - function that accepts a user input and validates the input based on several regex matches
+ * @param {string} input
+ * @return {string} VALIDATION_CONSTANTS enum
+ */
 const validateUserInput = (input) => {
     // Regular expressions for IPv4, IPv6, and domain name validation
     const ipv4Regex = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.([25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.([25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.([25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
